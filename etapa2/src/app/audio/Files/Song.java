@@ -43,6 +43,7 @@ public final class Song extends AudioFile {
         this.likes = 0;
     }
 
+
     @Override
     public boolean matchesAlbum(final String albumName) {
         return this.getAlbum().equalsIgnoreCase(albumName);

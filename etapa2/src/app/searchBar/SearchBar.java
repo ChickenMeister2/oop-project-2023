@@ -1,6 +1,5 @@
 package app.searchBar;
 
-
 import app.Admin;
 import app.audio.LibraryEntry;
 import lombok.Getter;
@@ -121,11 +120,36 @@ public final class SearchBar {
                 if (filters.getOwner() != null) {
                     entries = filterByOwner(entries, filters.getOwner());
                 }
+                break;
+            case "album":
+                entries = new ArrayList<>(Admin.getAlbums());
 
+                if (filters.getName() != null) {
+                    entries = filterByName(entries, filters.getName());
+                }
+
+                if (filters.getOwner() != null) {
+                    entries = filterByOwner(entries, filters.getOwner());
+                }
+                break;
+            case "host":
+                entries = new ArrayList<>(Admin.getHosts());
+
+                if (filters.getName() != null) {
+                    entries = FilterUtils.filterByName(entries, filters.getName());
+                }
+                break;
+            case "artist":
+                entries = new ArrayList<>(Admin.getArtists());
+
+                if (filters.getName() != null) {
+                    entries = FilterUtils.filterByName(entries, filters.getName());
+                }
                 break;
             default:
                 entries = new ArrayList<>();
         }
+
 
         while (entries.size() > MAX_RESULTS) {
             entries.remove(entries.size() - 1);
@@ -144,14 +168,21 @@ public final class SearchBar {
      */
     public LibraryEntry select(final Integer itemNumber) {
         if (this.results.size() < itemNumber) {
-            results.clear();
 
             return null;
         } else {
-            lastSelected =  this.results.get(itemNumber - 1);
-            results.clear();
+            lastSelected = this.results.get(itemNumber - 1);
 
             return lastSelected;
         }
+
     }
+
+    /**
+     * Clear results.
+     */
+    public void clearResults() {
+        results.clear();
+    }
+
 }

@@ -1,5 +1,8 @@
 package fileio.input;
 
+
+import java.util.ArrayList;
+
 public final class CommandInput {
     private String command;
     private String username;
@@ -11,6 +14,96 @@ public final class CommandInput {
     private Integer playlistId; // pentru add/remove song
     private String playlistName; // pentru create playlist
     private Integer seed; // pentru shuffle
+    private Integer age; // pentru addUser
+    private String city; // pentru addUser
+    private String name; // pentru addAlbum
+    private int releaseYear; // pentru addAlbum
+    private String description; // pentru addAlbum
+    private ArrayList<SongInput> songs; // pentru addAlbum
+    private ArrayList<EpisodeInput> episodes; // pentru addPodcast
+    private String date; // pentru addEvent
+    private int price; // pentru merch
+    private String nextPage; // pentru changePage
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(final String date) {
+        this.date = date;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(final int price) {
+        this.price = price;
+    }
+
+    public String getNextPage() {
+        return nextPage;
+    }
+
+    public void setNextPage(final String nextPage) {
+        this.nextPage = nextPage;
+    }
+
+    public ArrayList<EpisodeInput> getEpisodes() {
+        return episodes;
+    }
+
+    public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
+        this.episodes = episodes;
+    }
+
+    public ArrayList<SongInput> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(final ArrayList<SongInput> songs) {
+        this.songs = songs;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(final int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(final String description) {
+        this.description = description;
+    }
+
+    public void setAge(final Integer age) {
+        this.age = age;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(final String city) {
+        this.city = city;
+    }
 
     public CommandInput() {
     }

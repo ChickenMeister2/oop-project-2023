@@ -115,6 +115,7 @@ public final class FilterUtils {
         return filter(entries, entry -> entry.matchesOwner(user));
     }
 
+
     /**
      * Filter by playlist visibility list.
      *

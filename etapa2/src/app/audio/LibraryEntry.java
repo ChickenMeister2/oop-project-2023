@@ -1,8 +1,10 @@
 package app.audio;
 
+import app.user.User;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type Library entry.
@@ -11,15 +13,24 @@ import java.util.ArrayList;
 public abstract class LibraryEntry {
     private final String name;
 
+    @Getter
+    private List<User> users;
     /**
      * Instantiates a new Library entry.
      *
      * @param name the name
      */
+
     public LibraryEntry(final String name) {
         this.name = name;
     }
 
+    public static class ArtistEntry extends LibraryEntry {
+        public ArtistEntry(final String name) {
+            super(name);
+        }
+
+    }
     /**
      * Matches name boolean.
      *
